@@ -10,6 +10,7 @@
     color 0.4s ease,
     border 0.3s ease,
     box-shadow 0.3s ease;
+    cursor:url('https://cdn-icons-png.flaticon.com/512/25/25231.png') 16 16, auto;
 }
 /* variables */
 :root {

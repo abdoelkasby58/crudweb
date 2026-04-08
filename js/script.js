@@ -9,6 +9,7 @@ let category = document.getElementById("category");
 let create = document.getElementById("create");
 let darkmode = document.getElementById("darkmode");
 //themes
+title.focus();
 function toggleTheme() {
   if (document.body.classList.contains("dark-theme")) {
     darkmode.innerHTML = `<i class="fa-solid fa-sun" style="color: rgb(255, 255, 255);"></i>`;
@@ -221,3 +222,4 @@ scrollUp.onclick = function () {
     behavior: "smooth",
   });
 };
+ scrollUp.style.display = "none";
