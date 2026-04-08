@@ -174,7 +174,7 @@ function searchData(value) {
   for (let i = 0; i < dataPro.length; i++) {
     if (searchMood == "Title") {
       if (dataPro[i].title.includes(value.toLowerCase())) {
-        table += ` <tr>
+        table += `<tr>
               <td data-label="Id">${i + 1}</td>
               <td data-label="Title">${dataPro[i].title}</td>
               <td data-label="Price">${dataPro[i].price}</td>
@@ -186,10 +186,9 @@ function searchData(value) {
               <td data-label="Update"><button onclick="updateData(${i})">Update</button></td>
               <td data-label="Delete"><button onclick="deleteData(${i})">Delete</button></td>
             </tr>`;
-      } else {
+      }} else {
         if (dataPro[i].category.includes(value.toLowerCase())) {
-          table += `
-        <tr>
+          table += `<tr>
                 <td data-label="Id">${i + 1}</td> 
                 <td data-label="Title">${dataPro[i].title}</td>
                 <td data-label="Price">${dataPro[i].price}</td>
@@ -203,7 +202,7 @@ function searchData(value) {
               </tr>`;
         }
       }
-    }
+    
   }
   document.getElementById("table-body").innerHTML = table;
 }
