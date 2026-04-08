@@ -103,7 +103,22 @@ body {
     background-position: 0% 50%;
   }
 }
-
+.scroll-up {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: var(--primary);
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  color: white;
+  cursor: pointer;
+  opacity: 0.7;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
 /* container */
 .crud-container {
   width: 90%;
@@ -253,6 +268,10 @@ td button:last-child {
 
 /* responsive */
 @media (max-width: 768px) {
+  .scroll-up {
+    width: 35px;
+    height: 35px;
+  }
   .theme {
     font-size: 14px;
     width: 35px;

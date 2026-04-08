@@ -11,12 +11,13 @@ let darkmode = document.getElementById("darkmode");
 //themes
 function toggleTheme() {
   if (document.body.classList.contains("dark-theme")) {
-darkmode.innerHTML = `<i class="fa-solid fa-sun" style="color: rgb(255, 255, 255);"></i>`
+    darkmode.innerHTML = `<i class="fa-solid fa-sun" style="color: rgb(255, 255, 255);"></i>`;
     document.body.classList.remove("dark-theme");
   } else {
-darkmode.innerHTML = `<i class="fa-solid fa-moon" style="color: rgb(0, 0, 0);"></i>`;
-document.body.classList.add("dark-theme");
-  }}
+    darkmode.innerHTML = `<i class="fa-solid fa-moon" style="color: rgb(0, 0, 0);"></i>`;
+    document.body.classList.add("dark-theme");
+  }
+}
 //متغير وهمي
 let mood = "create";
 let tmp;
@@ -186,9 +187,10 @@ function searchData(value) {
               <td data-label="Update"><button onclick="updateData(${i})">Update</button></td>
               <td data-label="Delete"><button onclick="deleteData(${i})">Delete</button></td>
             </tr>`;
-      }} else {
-        if (dataPro[i].category.includes(value.toLowerCase())) {
-          table += `<tr>
+      }
+    } else {
+      if (dataPro[i].category.includes(value.toLowerCase())) {
+        table += `<tr>
                 <td data-label="Id">${i + 1}</td> 
                 <td data-label="Title">${dataPro[i].title}</td>
                 <td data-label="Price">${dataPro[i].price}</td>
@@ -200,9 +202,22 @@ function searchData(value) {
                 <td data-label="Update"><button onclick="updateData(${i})">Update</button></td>
                 <td data-label="Delete"><button onclick="deleteData(${i})">Delete</button></td>
               </tr>`;
-        }
       }
-    
+    }
   }
   document.getElementById("table-body").innerHTML = table;
 }
+let scrollUp = document.getElementById("uPscroll");
+window.onscroll = function () {
+  if (window.scrollY >= 300) {
+    scrollUp.style.display = "flex";
+  } else {
+    scrollUp.style.display = "none";
+  }
+};
+scrollUp.onclick = function () {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth",
+  });
+};
