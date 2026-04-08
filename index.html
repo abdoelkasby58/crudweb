@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  </head>
+  <body>
+    <header class="crud-container">
+      <!-- <div class="box"></div> -->
+      <div class="crud-title">
+        <h1 class="crud-title-text">crud</h1>
+        <p class="crud-title-pragraph">product management system</p>
+        <div class="theme" id="darkmode" onclick="toggleTheme()">
+          
+        </div>
+      </div>
+      <div class="crud-inputs">
+        <div class="input-title">
+          <input type="text" name="txt" id="title" placeholder="Title" />
+        </div>
+        <div class="input-number">
+          <input
+            type="number"
+            onkeyup="getTotal()"
+            name="price"
+            id="price"
+            placeholder="Price"
+          />
+          <input
+            type="number"
+            onkeyup="getTotal()"
+            name="Taxes"
+            id="taxes"
+            placeholder="Taxes"
+          />
+          <input
+            type="number"
+            onkeyup="getTotal()"
+            name="Ads"
+            id="ads"
+            placeholder="Ads"
+          />
+          <input
+            type="number"
+            onkeyup="getTotal()"
+            name="Discount"
+            id="discount"
+            placeholder="Discount"
+          />
+          <small id="total"></small>
+        </div>
+      </div>
+      <div class="input-count">
+        <input type="number" name="count" id="count" placeholder="Count" />
+      </div>
+      <div class="input-category">
+        <input
+          type="text"
+          name="category"
+          id="category"
+          placeholder="Category"
+        />
+      </div>
+      <div class="btn-create">
+        <button id="create" class="btn">Create</button>
+      </div>
+      <div class="input-search">
+        <input
+          type="search"
+          name="search"
+          onkeyup="searchData(this.value)"
+          id="search"
+          placeholder="Search"
+        />
+      </div>
+      <div class="btns-search">
+        <button id="searchTitle" onclick="getSearchMood(this.id)" class="btn">
+          Search By Title
+        </button>
+        <button
+          id="searchCategory"
+          onclick="getSearchMood(this.id)"
+          class="btn"
+        >
+          Search By Category
+        </button>
+      </div>
+      <div id="delAll"></div>
+      <div class="tables">
+        <table>
+          <thead id="table-head">
+            <tr>
+              <th>Id</th>
+              <th>Title</th>
+              <th>Price</th>
+              <th>Taxes</th>
+              <th>Ads</th>
+              <th>Discount</th>
+              <th>Total</th>
+              <th>Category</th>
+              <th>Update</th>
+              <th>Delete</th>
+            </tr>
+          </thead>
+          <tbody id="table-body"></tbody>
+        </table>
+      </div>
+    </header>
+
+    <script src="js/script.js"></script>
+  </body>
+</html>

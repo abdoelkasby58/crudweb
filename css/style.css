@@ -1,0 +1,304 @@
+/* reset */
+@import url('https://fonts.googleapis.com/css2?family=Alexandria:wght@100..900&family=Amiri+Quran&family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Caveat:wght@400..700&family=Federant&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Kalam:wght@300;400;700&family=Momo+Signature&family=Mulish:ital,wght@0,1000;1,1000&family=Noto+Nastaliq+Urdu:wght@400..700&family=Noto+Sans+Arabic:wght@100..900&family=Odor+Mean+Chey&family=Playwrite+NZ+Basic:wght@100..400&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rakkas&family=Zain:ital,wght@0,200;0,300;0,400;0,700;0,800;0,900;1,300;1,400&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+ font-family: 'Odor Mean Chey', sans-serif;
+  transition:
+    background 0.4s ease,
+    color 0.4s ease,
+    border 0.3s ease,
+    box-shadow 0.3s ease;
+}
+/* variables */
+:root {
+  --bg-gradient: linear-gradient(270deg, #ffffff, #0b2f33, #e9eef5);
+  --bg-color: #f5f7fa;
+  --card-color: #ffffff;
+
+  --primary: #0b2f33;
+  --secondary: #14545c;
+  --accent: #ff6347;
+
+  --text: #1f1f1f;
+  --text-light: #6b6b6b;
+
+  --input-bg: #f1f1f1;
+  --input-focus: #e4e4e4;
+
+  --table-row: #ffffff;
+  --table-alt: #f2f2f2;
+}
+.dark-theme {
+  --bg-gradient: linear-gradient(270deg, #000000, #0b2f33, #000000);
+  --bg-color: #0f0f0f;
+  --card-color: #1a1a1a;
+
+  --primary: #0b2f33;
+  --secondary: #14545c;
+  --accent: #ff4c4c;
+
+  --text: #ffffff;
+  --text-light: #aaaaaa;
+
+  --input-bg: #222;
+  --input-focus: #2a2a2a;
+
+  --table-row: #222;
+  --table-alt: #181818;
+}
+.body {
+  transition:
+    background 0.6s ease,
+    color 0.4s ease;
+}
+.theme {
+  cursor: pointer;
+  background: var(--primary);
+  width: 45px;
+  height: 45px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+
+  color: white;
+  font-size: 20px;
+fonyt-weight: bold;
+  transition: 0.4s;
+}
+
+.theme:hover {
+  transform: rotate(180deg) scale(1.1);
+  background: var(--secondary);
+}
+/* .box {
+  width: 200px;
+  height: 200px;
+  background: #007bff;
+
+  border-radius: 20px;
+  corner-shape: scoop;
+} */
+/* animated background */
+body {
+  background: var(--bg-gradient);
+  background-size: 600% 600%;
+  animation: bgMove 12s ease infinite;
+  color: var(--text);
+  display: flex;
+  justify-content: center;
+  padding: 30px;
+}
+
+@keyframes bgMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* container */
+.crud-container {
+  width: 90%;
+  max-width: 900px;
+  background: var(--card-color);
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 0 30px rgba(0, 188, 212, 0.2);
+}
+
+/* title */
+.crud-title {
+  display: grid;
+
+  margin-bottom: 20px;
+
+  justify-items: center;
+  gap: 10px;
+}
+
+.crud-title-text {
+  font-size: 32px;
+  text-transform: uppercase;
+  color: var(--primary);
+}
+
+.crud-title-pragraph {
+  font-size: 14px;
+  color: var(--text-light);
+}
+
+/* inputs */
+input {
+  width: 100%;
+  padding: 10px;
+  margin: 6px 0;
+  border: none;
+  outline: none;
+
+  border-radius: 8px;
+  transition: 0.3s;
+  background: var(--input-bg);
+  color: var(--text);
+}
+
+input:focus {
+  background: var(--input-focus);
+  transform: scale(1.02);
+  border: 1px solid var(--primary);
+}
+
+/* numbers row */
+.input-number {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.input-number input {
+  flex: 1;
+}
+
+/* total */
+#total {
+  content: "Total: ";
+  background: var(--accent);
+  padding: 10px;
+  border-radius: 8px;
+  font-weight: bold;
+  color: white;
+  margin-block: 10px;
+}
+#total:before {
+  content: "Total: ";
+}
+
+/* buttons */
+.btn {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  background: var(--primary);
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: var(--secondary);
+  letter-spacing: 1px;
+  transform: scale(1.03);
+}
+
+/* search buttons */
+.btns-search {
+  display: flex;
+  gap: 10px;
+  margin: 10px 0;
+}
+
+.btns-search .btn {
+  flex: 1;
+}
+
+/* table */
+table {
+  width: 100%;
+  margin-top: 20px;
+  border-collapse: collapse;
+  text-align: center;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+th {
+  color: white;
+  background: var(--primary);
+  padding: 10px;
+}
+
+td {
+  padding: 10px;
+  background: var(--table-row);
+}
+
+tr:nth-child(even) td {
+  background: var(--table-alt);
+}
+
+/* buttons inside table */
+td button {
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+td button:first-child {
+  background: #ffc107;
+}
+
+td button:last-child {
+  background: #f44336;
+  color: white;
+}
+
+/* responsive */
+@media (max-width: 768px) {
+  .theme {
+    font-size: 14px;
+    width: 35px;
+    height: 35px;
+  }
+  .input-number {
+    flex-direction: column;
+  }
+
+  .btns-search {
+    flex-direction: column;
+  }
+  table {
+    border: none;
+  }
+
+  thead {
+    display: none;
+  }
+
+  table,
+  tbody,
+  tr,
+  td {
+    display: block;
+    width: 100%;
+  }
+
+  tr {
+    margin-bottom: 15px;
+    background: #111;
+    padding: 10px;
+    border-radius: 10px;
+  }
+
+  td {
+    text-align: left;
+    padding: 8px;
+    position: relative;
+  }
+
+  td::before {
+    content: attr(data-label);
+    font-weight: bold;
+    display: block;
+    color: #aaa;
+    margin-bottom: 5px;
+  }
+}
